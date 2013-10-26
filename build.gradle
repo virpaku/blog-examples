@@ -2,7 +2,7 @@ apply plugin: 'java'
 
 task zip(type:Zip) {
 	from 'src'
-//	expand(project.properties)
+//	expand(project.version)
 	fileMode 511
 }
 
