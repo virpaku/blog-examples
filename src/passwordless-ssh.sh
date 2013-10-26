@@ -2,11 +2,11 @@
 
 # description: initiates password-less ssh via RSA for the current user, on the current host, to a specified user on a remote machine.
 #
-# author: cdlormo
+# author: clormor
 #
 # usage: passwordless-ssh.sh <remote user name> <remote host>
 #
-# version: $project.version
+# version: @version@
 
 set -e
 
