@@ -1,14 +1,30 @@
 import org.apache.tools.ant.filters.FixCrLfFilter
 import org.apache.tools.ant.filters.ReplaceTokens
 
-apply plugin: 'java'
+apply plugin: 'groovy'
+defaultTasks ('zip')
+loadConfiguration()
 
-task zip(type:Zip) {
-	from 'src'
-
-	filter(FixCrLfFilter)
-	filter(ReplaceTokens, tokens: [version: version])
-
-	fileMode 504
+def loadConfiguration() {
+	def environment = hasProperty('env') ? env : 'dev'
+	project.ext.envrionment = environment
+	println "Environment is set to $environment"
+ 
+	def configFile = file('environment.groovy')
+	def config = new ConfigSlurper("$environment").parse(configFile.toURL())
+	project.ext.config = config
 }
 
+task zip(type:Zip) {
+	description 'bundle the scripts into a distributable archive'
+	from 'src'
+	fileMode 504
+	filter(FixCrLfFilter)
+	filter(ReplaceTokens, tokens: [
+		version: version,
+		host: config.serverName,
+		env: envrionment
+	])
+}
+
+build.dependsOn(zip)
