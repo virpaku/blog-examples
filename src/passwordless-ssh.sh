@@ -5,6 +5,8 @@
 # author: cdlormo
 #
 # usage: passwordless-ssh.sh <remote user name> <remote host>
+#
+# version: $project.version
 
 set -e
 
