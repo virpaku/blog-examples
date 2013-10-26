@@ -1,7 +1,7 @@
 scripts
 =======
 
-scripts of varying levels of usefulness;
+Scripts of varying levels of usefulness;
 
 - passwordless_ssh.sh - setup remote ssh keys allowing you to ssh without continually typing in your password
 - enableWebcam.sh - [OSx] enable the webcam
@@ -10,3 +10,5 @@ scripts of varying levels of usefulness;
 - meminfo.py - [OSx] small python utility to display memory usage statistics
 - stats.sh - [OSx] prints some useful information about your machine (depends on meminfo.py)
 - replace_space_with_underscore.sh - recursivley replaces all spaces in file/directory names with '_'
+
+This project also serves as an example of envrionment-specific build configuration.
