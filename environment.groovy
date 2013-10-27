@@ -1,27 +1,30 @@
 // default configurations
-mail {
-    server = 'localhost'
-    port = 25
+webapp {
+    url = 'http://localhost'
+    port = 80
 }
 
 // environment-specific configurations
 environments {
     dev {
-        serverName = 'http://localhost:9090'        
+	host = localhost
+	webapp {
+        	port = 8080
+	}        
     }
     
-    test {
-        serverName = 'http://testserver'
+    staging {
+        host = 'testserver'
         mail {
-            server = 'mail.testserver'
+            url = 'http://testserver'
         }
     }
     
-    prod {
-        serverName = 'http://www.mrhaki.com'
+    live {
+        host = 'www.chrislormor.com'
         mail {
-            port = 552
-            server = 'mail.host.com'
+            port = 8081
+            url = 'http://www.chrislormor.com'
         }
     }
 }
