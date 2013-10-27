@@ -1,6 +1,5 @@
 // default configurations
 webapp {
-    url = 'http://localhost'
     port = 80
 }
 
@@ -15,16 +14,12 @@ environments {
     
     staging {
         host = 'testserver'
-        mail {
-            url = 'http://testserver'
-        }
     }
     
     live {
         host = 'www.chrislormor.com'
-        mail {
+        webapp {
             port = 8081
-            url = 'http://www.chrislormor.com'
         }
     }
 }
