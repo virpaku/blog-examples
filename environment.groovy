@@ -7,7 +7,7 @@ webapp {
 // environment-specific configurations
 environments {
     dev {
-	host = localhost
+	host = 'localhost'
 	webapp {
         	port = 8080
 	}        
